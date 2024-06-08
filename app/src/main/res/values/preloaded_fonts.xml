@@ -4,5 +4,7 @@
         <item>@font/press_start_2p</item>
         <item>@font/quantico</item>
         <item>@font/shrikhand</item>
+        <item>@font/ubuntu</item>
+        <item>@font/ubuntu_bold</item>
     </array>
 </resources>
