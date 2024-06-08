@@ -41,17 +41,18 @@
             android:id="@+id/bottom_layout">
 
             <EditText
+                android:id="@+id/message_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/message_edit_text"
                 android:layout_centerInParent="true"
                 android:layout_marginLeft="15dp"
+                android:layout_toLeftOf="@+id/send_button"
+                android:background="@drawable/round_corner"
+                android:fontFamily="@font/ubuntu_light"
                 android:hint="write something..."
                 android:paddingStart="20dp"
-                android:textColorHint="@color/white"
                 android:textColor="@color/white"
-                android:background="@drawable/round_corner"
-                android:layout_toLeftOf="@+id/send_button"/>
+                android:textColorHint="@color/white" />
 
             <ImageButton
                 android:layout_width="48dp"
