@@ -2,6 +2,7 @@ package com.example.look7;
 
 import static java.util.concurrent.Executors.newSingleThreadExecutor;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
@@ -36,7 +37,7 @@ public class ChatActivity extends AppCompatActivity {
     private Button startButton;
     private CountDownTimer countDownTimer;
     private boolean isTimerRunning = false;
-    private long timeLeftInMillis = 120000; // 2 minutes
+    private long timeLeftInMillis = 2000; // 2 minutes
 
     RecyclerView recyclerView;
     EditText messageEditText;
@@ -137,7 +138,7 @@ public class ChatActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                isTimerRunning = false;
+                navigateToGuess();
             }
         }.start();
     }
@@ -148,5 +149,10 @@ public class ChatActivity extends AppCompatActivity {
 
         String timeFormatted = String.format("%02d:%02d", minutes, seconds);
         timerTextView.setText(timeFormatted);
+    }
+    private void navigateToGuess() {
+        Intent intent = new Intent(ChatActivity.this, GuessActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_white"
+    android:gravity="center">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/correctAnimation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:lottie_rawRes="@raw/correct"
+        android:layout_gravity="center" />
+
+    <TextView
+        android:id="@+id/congratulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="You have successfully passed this round"
+        android:textColor="@color/black" />
+
+    <RelativeLayout
+        android:id="@+id/againButton"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/button_background"
+        android:backgroundTint="@color/white">
+
+        <TextView
+            android:id="@+id/anotherOne"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/press_start_2p"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:text="One More Time!"
+            android:textColor="@color/green"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+</LinearLayout>
