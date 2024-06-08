@@ -1,6 +1,7 @@
 package com.example.look7;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout beginButton;
     TextView buttonText;
     LottieAnimationView buttonAnimation;
+    private MediaPlayer mediaPlayer;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -32,6 +35,10 @@ public class MainActivity extends AppCompatActivity {
         beginButton = findViewById(R.id.beginButton);
         buttonText= findViewById(R.id.buttonText);
         buttonAnimation = findViewById(R.id.button_Animation);
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.mainmenu);
+        mediaPlayer.start();
+
 
         beginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,6 +60,31 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+            mediaPlayer.pause();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mediaPlayer != null) {
+            mediaPlayer.start();
+        }
     }
     private void navigateToChat() {
         Intent intent = new Intent(MainActivity.this, ChatActivity.class);
