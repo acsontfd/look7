@@ -10,32 +10,13 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="0dp"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="220dp"
         android:fontFamily="@font/shrikhand"
         android:text="Who were you chatting with?"
         android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="@color/black"
         android:textSize="40sp"
         android:textStyle="bold" />
-
-<!--    <Button-->
-<!--        android:id="@+id/buttonScam"-->
-<!--        android:layout_width="135dp"-->
-<!--        android:layout_height="75dp"-->
-<!--        android:layout_below="@id/textChat"-->
-<!--        android:background="@drawable/button_background"-->
-<!--        android:layout_marginStart="46dp"-->
-<!--        android:layout_marginTop="100dp"-->
-<!--        android:text="Scammer" />-->
-
-<!--    <Button-->
-<!--        android:id="@+id/buttonGenuine"-->
-<!--        android:layout_width="135dp"-->
-<!--        android:layout_height="75dp"-->
-<!--        android:layout_below="@id/textChat"-->
-<!--        android:layout_marginTop="100dp"-->
-<!--        android:layout_marginStart="220dp"-->
-<!--        android:text="Genuine Individual" />-->
 
     <RelativeLayout
         android:id="@+id/scamButton"
@@ -44,17 +25,17 @@
         android:layout_below="@id/textChat"
         android:background="@drawable/button_background"
         android:layout_marginStart="46dp"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="70dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fontFamily="@font/ubuntu_bold"
+            android:gravity="center"
             android:text="Scammer"
             android:textColor="@color/white"
             android:textSize="20dp"
-            android:gravity="center"
-            android:fontFamily="serif-monospace"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </RelativeLayout>
 
@@ -64,18 +45,18 @@
         android:layout_height="75dp"
         android:layout_below="@id/textChat"
         android:background="@drawable/button_background"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="70dp"
         android:layout_marginStart="220dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:fontFamily="@font/ubuntu_bold"
+            android:gravity="center"
             android:text="Genuine Inividual"
             android:textColor="@color/white"
             android:textSize="20dp"
-            android:gravity="center"
-            android:fontFamily="serif-monospace"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
     </RelativeLayout>
 

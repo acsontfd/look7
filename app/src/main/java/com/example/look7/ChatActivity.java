@@ -1,5 +1,6 @@
 package com.example.look7;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
@@ -70,7 +71,6 @@ public class ChatActivity extends AppCompatActivity{
                     recyclerView.smoothScrollToPosition(messageAdapter.getItemCount());
                 }
             });
-
         }
 
         private void startTimer() {
@@ -83,21 +83,25 @@ public class ChatActivity extends AppCompatActivity{
 
                 @Override
                 public void onFinish() {
-                    isTimerRunning = false;
+                    navigateToGuess();
                 }
             }.start();
 
         }
-
-
 
         private void updateTimerText() {
             int minutes = (int) (timeLeftInMillis / 1000) / 60;
             int seconds = (int) (timeLeftInMillis / 1000) % 60;
 
             String timeFormatted = String.format("%02d:%02d", minutes, seconds);
-            timerTextView.setText("Timer: " + timeFormatted);
+            timerTextView.setText(timeFormatted);
         }
+
+    private void navigateToGuess() {
+        Intent intent = new Intent(ChatActivity.this, GuessActivity.class);
+        startActivity(intent);
+        finish();
+    }
     }
 
 
