@@ -25,6 +25,10 @@
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".ChatActivity"></activity>
 
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
     </application>
 
 </manifest>
