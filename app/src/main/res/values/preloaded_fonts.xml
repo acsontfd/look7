@@ -3,6 +3,5 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/quantico</item>
         <item>@font/shrikhand</item>
-        <item>@font/ubuntu_light</item>
     </array>
 </resources>
