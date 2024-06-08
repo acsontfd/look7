@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -14,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button beginButton;
+    private RelativeLayout beginButton;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
