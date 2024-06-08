@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout beginButton;
     TextView buttonText;
     LottieAnimationView buttonAnimation;
+    TextView description;
     private MediaPlayer mediaPlayer;
 
 
