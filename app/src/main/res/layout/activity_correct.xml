@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/bg_white"
-    android:gravity="center">
+    android:background="@drawable/guessbackground"
+    android:gravity="center_horizontal">
 
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/correctAnimation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:lottie_rawRes="@raw/correct"
-        android:layout_gravity="center" />
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="215dp"
+        app:lottie_rawRes="@raw/correct"/>
 
     <TextView
         android:id="@+id/congratulation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="You have successfully passed this round"
-        android:textColor="@color/black" />
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/black"
+        android:text="You have successfully passed this round" />
 
     <RelativeLayout
         android:id="@+id/againButton"
         android:layout_width="300dp"
         android:layout_height="70dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/button_background"
-        android:backgroundTint="@color/white">
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/button_background">
 
         <TextView
             android:id="@+id/anotherOne"
@@ -42,5 +42,7 @@
             android:textColor="@color/green"
             android:textSize="20dp"
             android:textStyle="bold" />
+
     </RelativeLayout>
+
 </LinearLayout>
