@@ -96,7 +96,7 @@ public class ChatActivity extends AppCompatActivity{
             int seconds = (int) (timeLeftInMillis / 1000) % 60;
 
             String timeFormatted = String.format("%02d:%02d", minutes, seconds);
-            timerTextView.setText("Timer: " + timeFormatted);
+            timerTextView.setText(timeFormatted);
         }
     }
 
