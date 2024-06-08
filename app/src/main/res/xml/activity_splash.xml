@@ -19,7 +19,7 @@
         android:id="@+id/punchlineTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Elevating Local Agriculture, One Crop at a Time."
+        android:text="Placeholder quote lmao"
         android:textSize="16sp"
         android:textStyle="italic"
         android:layout_below="@id/logo"
