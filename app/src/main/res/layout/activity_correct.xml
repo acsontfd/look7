@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/correctAnimation"
+        app:lottie_rawRes="@raw/correct"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="214dp"
+        android:layout_marginEnd="156dp"
+        ></com.airbnb.lottie.LottieAnimationView>
+
+    <TextView
+        android:id="@+id/congratulation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/correctAnimation"
+        android:layout_marginStart="86dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="321dp"
+        android:textColor="@color/black"
+        android:text="You have successfuly passed this round" />
+
+    <RelativeLayout
+        android:id="@+id/againButton"
+        android:layout_width="290dp"
+        android:layout_height="70dp"
+        android:layout_below="@id/correctAnimation"
+        android:layout_marginTop="100dp"
+        android:layout_marginStart="58dp"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/button_background">
+
+        <TextView
+            android:id="@+id/anotherOne"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/press_start_2p"
+            android:gravity="center"
+            android:paddingTop="15dp"
+            android:text="One More Time!"
+            android:textColor="@color/green"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
