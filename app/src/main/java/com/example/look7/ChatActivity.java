@@ -39,7 +39,7 @@ public class ChatActivity extends AppCompatActivity {
     private Button startButton;
     private CountDownTimer countDownTimer;
     private boolean isTimerRunning = false;
-    private long timeLeftInMillis = 1200; // 2 minutes
+    private long timeLeftInMillis = 120000; // 2 minutes
 
     RecyclerView recyclerView;
     EditText messageEditText;
