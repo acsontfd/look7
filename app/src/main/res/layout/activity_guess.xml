@@ -26,13 +26,14 @@
         android:layout_height="75dp"
         android:layout_below="@id/textChat"
         android:background="@drawable/button_background"
+        android:backgroundTint="@color/red"
         android:layout_marginStart="46dp"
         android:layout_marginTop="70dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fontFamily="@font/ubuntu_light"
+            android:fontFamily="@font/ubuntu"
             android:gravity="center"
             android:text="Scammer"
             android:textColor="@color/white"
@@ -47,13 +48,14 @@
         android:layout_height="75dp"
         android:layout_below="@id/textChat"
         android:background="@drawable/button_background"
+        android:backgroundTint="@color/green"
         android:layout_marginTop="70dp"
         android:layout_marginStart="220dp">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fontFamily="@font/ubuntu_light"
+            android:fontFamily="@font/ubuntu"
             android:gravity="center"
             android:text="Genuine Inividual"
             android:textColor="@color/white"
