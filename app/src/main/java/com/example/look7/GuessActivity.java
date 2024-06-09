@@ -2,6 +2,7 @@ package com.example.look7;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.view.View;
@@ -19,6 +20,7 @@ public class GuessActivity extends AppCompatActivity {
     private RelativeLayout scamButton;
     private RelativeLayout genuineButton;
     private String result;
+    private MediaPlayer mediaPlayer;
 
 
     @SuppressLint("MissingInflatedId")
@@ -36,6 +38,8 @@ public class GuessActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Integer rd = (Integer) intent.getExtras().get("randomNumber");
+        mediaPlayer = MediaPlayer.create(this, R.raw.sneak);
+        mediaPlayer.start();
 
 
 
@@ -74,6 +78,32 @@ public class GuessActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+            mediaPlayer.pause();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mediaPlayer != null) {
+            mediaPlayer.start();
+        }
+    }
+
     private void navigateToGoodOutcome() {
         Intent intent = new Intent(GuessActivity.this, CorrectActivity.class);
         startActivity(intent);
