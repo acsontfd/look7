@@ -36,11 +36,11 @@ public class CorrectActivity extends AppCompatActivity {
         mediaPlayer = MediaPlayer.create(this, R.raw.win);
         mediaPlayer.start();
 
-
+        correctAnimation.playAnimation();
         againButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToChat();
+                navigateToMain();
             }
 
         });
@@ -71,8 +71,8 @@ public class CorrectActivity extends AppCompatActivity {
         }
     }
 
-    private void navigateToChat() {
-        Intent intent = new Intent(CorrectActivity.this, ChatActivity.class);
+    private void navigateToMain() {
+        Intent intent = new Intent(CorrectActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
     }
