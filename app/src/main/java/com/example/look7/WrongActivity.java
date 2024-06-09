@@ -34,7 +34,7 @@ public class WrongActivity extends AppCompatActivity {
         anotherOne = findViewById(R.id.anotherOne);
         wrongAnimation = findViewById(R.id.wrongAnimation);
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.wrong);
+        mediaPlayer = MediaPlayer.create(this, R.raw.lose);
         mediaPlayer.start();
 
 
