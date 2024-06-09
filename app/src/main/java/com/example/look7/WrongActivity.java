@@ -2,6 +2,7 @@ package com.example.look7;
 
 import static androidx.core.content.ContextCompat.startActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -17,11 +18,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.airbnb.lottie.LottieAnimationView;
 
 public class WrongActivity extends AppCompatActivity {
-    RelativeLayout againButton;
-    TextView anotherOne;
+    RelativeLayout againButtons;
+    TextView anotherOnes;
     LottieAnimationView wrongAnimation;
     private MediaPlayer mediaPlayer;
 
+    @SuppressLint("MissingInflatedId")
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
 
@@ -30,18 +32,19 @@ public class WrongActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wrong);
 
-        againButton = findViewById(R.id.againButton);
-        anotherOne = findViewById(R.id.anotherOne);
+        againButtons = findViewById(R.id.againButtons);
+        anotherOnes = findViewById(R.id.anotherOnes);
         wrongAnimation = findViewById(R.id.wrongAnimation);
 
         mediaPlayer = MediaPlayer.create(this, R.raw.lose);
         mediaPlayer.start();
 
+        wrongAnimation.playAnimation();
 
-        againButton.setOnClickListener(new View.OnClickListener() {
+        againButtons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                navigateToChat();
+                navigateToMain();
             }
 
         });
@@ -72,8 +75,8 @@ public class WrongActivity extends AppCompatActivity {
         }
     }
 
-    private void navigateToChat() {
-        Intent intent = new Intent(WrongActivity.this, ChatActivity.class);
+    private void navigateToMain() {
+        Intent intent = new Intent(WrongActivity.this, MainActivity.class);
         startActivity(intent);
         finish();
     }
