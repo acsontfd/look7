@@ -21,7 +21,9 @@
         android:layout_marginTop="40dp"
         android:layout_marginBottom="20dp"
         android:textColor="@color/black"
-        android:text="You did not get it right. Please try again" />
+        android:text="You did not get it right. Please try again"
+        android:fontFamily="@font/ubuntu"
+        android:textSize="17dp"/>
 
     <RelativeLayout
         android:id="@+id/againButtons"
@@ -40,7 +42,7 @@
             android:paddingTop="15dp"
             android:text="One More Time!"
             android:textColor="@color/red"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:textStyle="bold" />
 
     </RelativeLayout>
