@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     TextView buttonText;
     LottieAnimationView buttonAnimation;
     TextView description;
+    TextView description2;
     private MediaPlayer mediaPlayer;
 
 
@@ -36,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
         beginButton = findViewById(R.id.beginButton);
         buttonText= findViewById(R.id.buttonText);
         buttonAnimation = findViewById(R.id.button_Animation);
+        description = findViewById(R.id.description);
+        description2 = findViewById(R.id.description2);
+
 
         mediaPlayer = MediaPlayer.create(this, R.raw.mainmenu);
         mediaPlayer.start();
@@ -44,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
         beginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                description.setVisibility(View.INVISIBLE);
+                description2.setVisibility(View.INVISIBLE);
                 buttonAnimation.setVisibility(View.VISIBLE);
                 buttonAnimation.playAnimation();
 
