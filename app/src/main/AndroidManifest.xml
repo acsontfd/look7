@@ -25,6 +25,8 @@
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".ChatActivity"></activity>
         <activity android:name=".GuessActivity"></activity>
+        <activity android:name=".CorrectActivity" />
+        <activity android:name=".WrongActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

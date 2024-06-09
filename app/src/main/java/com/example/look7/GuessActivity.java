@@ -18,6 +18,7 @@ public class GuessActivity extends AppCompatActivity {
 
     private RelativeLayout scamButton;
     private RelativeLayout genuineButton;
+    private String result;
 
 
     @SuppressLint("MissingInflatedId")
@@ -29,12 +30,29 @@ public class GuessActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guess);
 
+
         scamButton = findViewById(R.id.scamButton);
         genuineButton = findViewById(R.id.genuineButton);
+
+        Intent intent = getIntent();
+        Integer rd = (Integer) intent.getExtras().get("randomNumber");
+
+
 
         scamButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(rd==0){
+
+                    navigateToGoodOutcome();
+
+                }else{
+
+                    navigateToBadOutcome();
+
+                }
+
+
 
             }
         });
@@ -42,17 +60,28 @@ public class GuessActivity extends AppCompatActivity {
         genuineButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                if(rd==1){
+
+                    navigateToGoodOutcome();
+
+                }else{
+
+                    navigateToBadOutcome();
+
+                }
+
             }
         });
     }
     private void navigateToGoodOutcome() {
-        Intent intent = new Intent(GuessActivity.this, ChatActivity.class);
+        Intent intent = new Intent(GuessActivity.this, CorrectActivity.class);
         startActivity(intent);
         finish();
     }
 
     private void navigateToBadOutcome() {
-        Intent intent = new Intent(GuessActivity.this, ChatActivity.class);
+        Intent intent = new Intent(GuessActivity.this, WrongActivity.class);
         startActivity(intent);
         finish();
     }
