@@ -34,7 +34,7 @@ public class WrongActivity extends AppCompatActivity {
         anotherOne = findViewById(R.id.anotherOne);
         wrongAnimation = findViewById(R.id.wrongAnimation);
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.mainmenu);
+        mediaPlayer = MediaPlayer.create(this, R.raw.wrong);
         mediaPlayer.start();
 
 
@@ -45,6 +45,31 @@ public class WrongActivity extends AppCompatActivity {
             }
 
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+            mediaPlayer.pause();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mediaPlayer != null) {
+            mediaPlayer.start();
+        }
     }
 
     private void navigateToChat() {
