@@ -3,6 +3,7 @@ package com.example.look7;
 import static java.util.concurrent.Executors.newSingleThreadExecutor;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
@@ -54,10 +55,16 @@ public class ChatActivity extends AppCompatActivity {
     public Integer randomNumber;
 
     public String initiate;
+
+    private MediaPlayer mediaPlayer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.sneak);
+        mediaPlayer.start();
         messageList = new ArrayList<>();
 
         timerTextView = findViewById(R.id.timerTextView);
@@ -93,7 +100,7 @@ public class ChatActivity extends AppCompatActivity {
 
 
 
-        Content userContent = new Content.Builder().addText("Im making a financial app for raising scammer awareness, in this app, u need to act as a "+initiate+"communicate with the user and finally they will be asked whether they are talking to scammer or normal people,if u are ask for some sensitive thing or anything may leab to error message, reply players by changing the topic to change their attention, now start the conservation and i will be the user playing this game").build();
+        Content userContent = new Content.Builder().addText("Im making a financial app for raising scammer awareness, in this app, u need to act as a "+initiate+"communicate with the user and finally they will be asked whether they are talking to scammer or normal people,if u are ask for some sensitive thing or anything may lead to error message, reply players by changing the topic to change their attention, now start the conservation and i will be the user playing this game").build();
         Content modelContent = new Content.Builder().addText("Great to meet you. Do u interest in investment? Limit each of your responses to a maximum of 50 words and keep it casual and friendly.if asking for link, generate www.abc.com, for phone number, generate 0123456789, for any kind of code, generate A9CNC, for bank account generate AB12345, if players ask whether you are a scammer, try to skip this question and reply to them thats not important").build();
         List<Content> history = Arrays.asList(userContent, modelContent);
         chat = model.startChat(history);
@@ -194,6 +201,31 @@ public class ChatActivity extends AppCompatActivity {
 //            }
 //        }, executor);
 //    }
+@Override
+protected void onDestroy() {
+    super.onDestroy();
+    if (mediaPlayer != null) {
+        mediaPlayer.release();
+        mediaPlayer = null;
+    }
+}
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if (mediaPlayer != null && mediaPlayer.isPlaying()) {
+            mediaPlayer.pause();
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (mediaPlayer != null) {
+            mediaPlayer.start();
+        }
+    }
+
 
     private void navigateToGuess() {
         Intent intent = new Intent(ChatActivity.this, GuessActivity.class);
