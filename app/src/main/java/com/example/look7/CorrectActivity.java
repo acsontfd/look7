@@ -20,6 +20,7 @@ public class CorrectActivity extends AppCompatActivity {
     TextView anotherOne;
     LottieAnimationView correctAnimation;
     private MediaPlayer mediaPlayer;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
 
